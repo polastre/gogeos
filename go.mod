@@ -1,3 +1,3 @@
-module github.com/jlectronix/gogeos
+module github.com/addie/gogeos
 
-go 1.13
+go 1.14
