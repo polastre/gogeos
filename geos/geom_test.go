@@ -1066,6 +1066,18 @@ func TestLineInterpolatePoint(t *testing.T) {
 	}
 }
 
+func TestIsValid(t *testing.T) {
+	validGeom := Must(FromWKT("POINT(10 10)"))
+	result, err := validGeom.IsValid()
+	if err != nil {
+		t.Fatalf("must not return error %s", err)
+	}
+
+	if !result {
+		t.Fatalf("Geometry must be valid")
+	}
+}
+
 func getFunctionName(i interface{}) string {
 	return runtime.FuncForPC(reflect.ValueOf(i).Pointer()).Name()
 }
