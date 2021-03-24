@@ -17,7 +17,7 @@ package main
 import (
 	"fmt"
 
-	"github.com/addie/gogeos/geos"
+	"github.com/polastre/gogeos/geos"
 )
 
 func main() {

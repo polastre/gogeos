@@ -458,6 +458,17 @@ func (g *Geometry) Envelope() (*Geometry, error) {
 	return g.unaryTopo("Envelope", cGEOSEnvelope)
 }
 
+// MinimumRotatedRectangle return the general minimum bounding rectangle of
+// the geometry. Can possibly be rotated. If the convex hull
+// of the object is a degenerate (line or point) this same degenerate
+// is returned.
+func (g *Geometry) MinimumRotatedRectangle() (*Geometry, error) {
+	// According to GEOS C API, GEOSGetGeometryN returns a pointer to internal
+	// storage and must not be destroyed directly, so we bypass the regular
+	// constructor to avoid the finalizer.
+	return g.unaryTopo("MinimumRotatedRectangle", cGEOSMinimumRotatedRectangle)
+}
+
 // ConvexHull computes the smallest convex geometry that contains all the points
 // of the geometry.
 func (g *Geometry) ConvexHull() (*Geometry, error) {

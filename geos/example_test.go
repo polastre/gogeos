@@ -3,7 +3,7 @@ package geos_test
 import (
 	"fmt"
 
-	"github.com/addie/gogeos/geos"
+	"github.com/polastre/gogeos/geos"
 )
 
 func ExampleGeometry_LineInterpolatePoint() {
