@@ -15,7 +15,7 @@ import (
 
 	// Pkg reference updated from code `code.google.com/p/draw2d/draw2d`
 	// as dep will error out with unable to deduce repo
-	"github.com/addie/gogeos/geos"
+	"github.com/polastre/gogeos/geos"
 )
 
 const (
