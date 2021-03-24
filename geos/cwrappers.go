@@ -331,6 +331,12 @@ func cGEOSEnvelope(g1 *C.GEOSGeometry) *C.GEOSGeometry {
 	return C.GEOSEnvelope_r(handle, g1)
 }
 
+func cGEOSMinimumRotatedRectangle(g1 *C.GEOSGeometry) *C.GEOSGeometry {
+	handlemu.Lock()
+	defer handlemu.Unlock()
+	return C.GEOSMinimumRotatedRectangle_r(handle, g1)
+}
+
 func cGEOSIntersection(g1 *C.GEOSGeometry, g2 *C.GEOSGeometry) *C.GEOSGeometry {
 	handlemu.Lock()
 	defer handlemu.Unlock()

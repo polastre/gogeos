@@ -559,6 +559,11 @@ var unaryTopoTests = []struct {
 		"POLYGON ((1 1, 1 3, 3 3, 3 1, 1 1))",
 		(*Geometry).ConvexHull,
 	},
+	{
+		"POLYGON((1 1, 3 1, 2 2, 3 3, 1 3, 1 1))",
+		"POLYGON ((1 1, 3 1, 3 3, 1 3, 1 1))",
+		(*Geometry).MinimumRotatedRectangle,
+	},
 	/*
 	   {
 	       "POINT(-117 35)",
